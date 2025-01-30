@@ -2,3 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Caprasimo&family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Allan:wght@400;700&family=Caprasimo&family=Lobster&display=swap");
+
+.lobster-regular {
+  font-family: "Lobster", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.allan-regular {
+  font-family: "Allan", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.allan-bold {
+  font-family: "Allan", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+svg {
+  font-family: "lobster", sans-serif;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+svg text {
+  text-transform: uppercase;
+  animation: stroke 5s alternate 2;
+  stroke-width: 2;
+  stroke: rgba(255, 255, 255, 1);
+  font-size: 200px;
+}
+@keyframes stroke {
+  0% {
+    fill: transparent;
+    stroke: rgba(255, 255, 255, 1);
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+    stroke-width: 2;
+  }
+  70% {
+    fill: transparent;
+    stroke: rgba(255, 255, 255, 1);
+  }
+  80% {
+    fill: transparent;
+    stroke: rgba(255, 255, 255, 1);
+    stroke-width: 3;
+  }
+  100% {
+    fill: rgba(255, 255, 255, 1);
+    stroke: transparent;
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+    stroke-width: 0;
+  }
+}

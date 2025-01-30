@@ -4,6 +4,7 @@ import 'reveal.js/dist/reset.css';
 import 'reveal.js/dist/reveal.css';
 import 'reveal.js/dist/theme/black.css';
  import One from "./Slides/One.tsx";
+import Zero from "./Slides/Zero.tsx";
 
 function Presentation() {
     useEffect(() => {
@@ -19,7 +20,10 @@ function Presentation() {
         <div className="reveal text-secondary" style={{ height: "100vh" }} >
             <div className="slides">
                 <section>
-                    <One />
+                    <Zero />
+                </section>
+                <section>
+                    {/* <One /> */}
                 </section>
                 <section>
                     <h2>Slide 2</h2>

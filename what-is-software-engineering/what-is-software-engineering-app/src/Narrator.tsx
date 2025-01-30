@@ -9,16 +9,16 @@ const Narrator = ({ children, className = '', AudioFile = undefined, VttFile = '
         const audio = audioRef.current;
         let cues: Cue[] = [];
 
+
         if (VttFile) {
             fetch(VttFile)
                 .then(response => response.text())
                 .then(data => {
                     cues = parseVTT(data);
-         if (audioRef.current) {
-             audioRef.current.play();
-           }
-     }, 25);
-
+                    if (audioRef.current) {
+                        debugger
+                        audioRef.current.play();
+                    }
                 });
         }
 
@@ -43,7 +43,18 @@ const Narrator = ({ children, className = '', AudioFile = undefined, VttFile = '
             });
         };
 
-        audio.addEventListener('timeupdate', handleTimeUpdate);        
+        const handleKeyDown = (event: any) => {
+            if (event.key === 'F5') {
+                if (audioRef.current) {
+                    audioRef.current.play();
+                }
+            }
+        }
+
+
+
+        audio.addEventListener('timeupdate', handleTimeUpdate);
+        window.addEventListener('keydown', handleKeyDown);
         return () => {
             audio.removeEventListener('timeupdate', handleTimeUpdate);
         };
